@@ -11,7 +11,7 @@ import SwiftUI
 struct PayBackShowcaseApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PBTransactionsList()
         }
     }
 }
