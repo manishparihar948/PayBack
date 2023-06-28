@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct PayBackShowcaseApp: App {
+
     var body: some Scene {
         WindowGroup {
             PBTransactionsList()

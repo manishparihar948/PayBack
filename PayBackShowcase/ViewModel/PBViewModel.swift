@@ -76,7 +76,13 @@ class PBViewModel: ObservableObject {
                     decoder.dateDecodingStrategy = .iso8601
                     
                     let showTransaction = try decoder.decode(Item.self, from: data)
+                    /*
                     DispatchQueue.main.async {
+                        self.showTransaction = showTransaction.data
+                    }
+                    */
+                    // Delayed Response by 2 seconds
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         self.showTransaction = showTransaction.data
                     }
                 }catch {

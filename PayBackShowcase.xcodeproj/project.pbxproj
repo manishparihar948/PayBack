@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD1E71672A4BA6F5002318D2 /* PBTransactionDetailList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1E71662A4BA6F5002318D2 /* PBTransactionDetailList.swift */; };
+		CD1E716D2A4C660B002318D2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1E716C2A4C660B002318D2 /* NetworkManager.swift */; };
 		CDBB83B02A4A50AD009EDE8C /* PayBackShowcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBB83AF2A4A50AD009EDE8C /* PayBackShowcaseApp.swift */; };
 		CDBB83B42A4A50B0009EDE8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDBB83B32A4A50B0009EDE8C /* Assets.xcassets */; };
 		CDBB83B72A4A50B0009EDE8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDBB83B62A4A50B0009EDE8C /* Preview Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD1E71662A4BA6F5002318D2 /* PBTransactionDetailList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBTransactionDetailList.swift; sourceTree = "<group>"; };
+		CD1E716C2A4C660B002318D2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CDBB83AC2A4A50AD009EDE8C /* PayBackShowcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayBackShowcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBB83AF2A4A50AD009EDE8C /* PayBackShowcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBackShowcaseApp.swift; sourceTree = "<group>"; };
 		CDBB83B32A4A50B0009EDE8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD1E716B2A4C65E9002318D2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CD1E716C2A4C660B002318D2 /* NetworkManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		CDBB83A32A4A50AD009EDE8C = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,7 @@
 		CDBB83AE2A4A50AD009EDE8C /* PayBackShowcase */ = {
 			isa = PBXGroup;
 			children = (
+				CD1E716B2A4C65E9002318D2 /* Service */,
 				CDBB83E12A4A52BC009EDE8C /* ViewModel */,
 				CDBB83DA2A4A518E009EDE8C /* View */,
 				CDBB83D92A4A517A009EDE8C /* database */,
@@ -148,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				CDBB83DF2A4A5268009EDE8C /* PBTransactionsList.swift */,
+				CD1E71662A4BA6F5002318D2 /* PBTransactionDetailList.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,9 +306,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD1E716D2A4C660B002318D2 /* NetworkManager.swift in Sources */,
 				CDBB83B02A4A50AD009EDE8C /* PayBackShowcaseApp.swift in Sources */,
 				CDBB83E32A4A52CD009EDE8C /* PBViewModel.swift in Sources */,
 				CDBB83E02A4A5268009EDE8C /* PBTransactionsList.swift in Sources */,
+				CD1E71672A4BA6F5002318D2 /* PBTransactionDetailList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

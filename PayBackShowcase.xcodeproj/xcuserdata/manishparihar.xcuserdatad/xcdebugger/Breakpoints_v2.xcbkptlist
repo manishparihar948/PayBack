@@ -3,4 +3,229 @@
    uuid = "4904945E-B4C3-42FC-812C-41D9005689B0"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C6A5038D-E018-4147-96A7-DF0BB3180CD2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayBackShowcase/Utils/NoNetworkView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "NoNetworkView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "C6A5038D-E018-4147-96A7-DF0BB3180CD2 - f8881702cdfcf500"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PayBackShowcase.NoNetworkView.init() -&gt; PayBackShowcase.NoNetworkView"
+                  moduleName = "PayBackShowcase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manishparihar/Desktop/Task/PayBack/PayBackShowcase/PayBackShowcase/Utils/NoNetworkView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "C6A5038D-E018-4147-96A7-DF0BB3180CD2 - dea539338ae6ac29"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PayBackShowcase.NoNetworkView.init(networkMonitor: SwiftUI.EnvironmentObject&lt;PayBackShowcase.NetworkMonitor&gt;) -&gt; PayBackShowcase.NoNetworkView"
+                  moduleName = "PayBackShowcase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manishparihar/Desktop/Task/PayBack/PayBackShowcase/PayBackShowcase/Utils/NoNetworkView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "18">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FCA45D10-C462-4E5A-B2EC-1F0A23EC08AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayBackShowcase/Utils/NoNetworkView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9400AB3B-F4CE-4DD1-A995-05BE39BCFFC4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayBackShowcase/Utils/NoNetworkView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "9400AB3B-F4CE-4DD1-A995-05BE39BCFFC4 - a17b3f36b7d413e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PayBackShowcase.NoNetworkView.body.getter : some"
+                  moduleName = "PayBackShowcase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manishparihar/Desktop/Task/PayBack/PayBackShowcase/PayBackShowcase/Utils/NoNetworkView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "719">
+               </Location>
+               <Location
+                  uuid = "9400AB3B-F4CE-4DD1-A995-05BE39BCFFC4 - fc1d1119ba503538"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; SwiftUI.Text in PayBackShowcase.NoNetworkView.body.getter : some"
+                  moduleName = "PayBackShowcase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manishparihar/Desktop/Task/PayBack/PayBackShowcase/PayBackShowcase/Utils/NoNetworkView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52CB7626-E57C-4364-B5F7-B1EDD8811D2F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayBackShowcase/Service/NoNetworkView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "52CB7626-E57C-4364-B5F7-B1EDD8811D2F - 761dabfa73fb2c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PayBackShowcase.NoNetworkView.body.getter : some"
+                  moduleName = "PayBackShowcase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manishparihar/Desktop/Task/PayBack/PayBackShowcase/PayBackShowcase/Service/NoNetworkView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "879">
+               </Location>
+               <Location
+                  uuid = "52CB7626-E57C-4364-B5F7-B1EDD8811D2F - 761dabfa73fb2c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PayBackShowcase.NoNetworkView.body.getter : some"
+                  moduleName = "PayBackShowcase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manishparihar/Desktop/Task/PayBack/PayBackShowcase/PayBackShowcase/Service/NoNetworkView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "719">
+               </Location>
+               <Location
+                  uuid = "52CB7626-E57C-4364-B5F7-B1EDD8811D2F - 5a07f490aabb945c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; SwiftUI.Text in PayBackShowcase.NoNetworkView.body.getter : some"
+                  moduleName = "PayBackShowcase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manishparihar/Desktop/Task/PayBack/PayBackShowcase/PayBackShowcase/Service/NoNetworkView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA824876-B0B2-47CA-9169-44FA94167174"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayBackShowcase/Service/NoNetworkView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "DA824876-B0B2-47CA-9169-44FA94167174 - 761dabfa73fb388"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PayBackShowcase.NoNetworkView.body.getter : some"
+                  moduleName = "PayBackShowcase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manishparihar/Desktop/Task/PayBack/PayBackShowcase/PayBackShowcase/Service/NoNetworkView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "316">
+               </Location>
+               <Location
+                  uuid = "DA824876-B0B2-47CA-9169-44FA94167174 - 761dabfa73fb388"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PayBackShowcase.NoNetworkView.body.getter : some"
+                  moduleName = "PayBackShowcase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manishparihar/Desktop/Task/PayBack/PayBackShowcase/PayBackShowcase/Service/NoNetworkView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "373">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
