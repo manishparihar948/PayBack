@@ -63,8 +63,16 @@ struct Value: Codable {
 class PBViewModel: ObservableObject {
     @Published var showTransaction : [ItemData] = []
     
+    @Published var isLoading = false
+    
+    var error: Error? 
+    
     func fetchDataFromAPI() {
+        // When fetching data
+        isLoading = true
         guard let url = Bundle.main.url(forResource: "PBTransactions", withExtension: "json") else {
+            // When an errors occurs
+            isLoading = false
             print("json file not found")
             return
         }
@@ -84,9 +92,13 @@ class PBViewModel: ObservableObject {
                     // Delayed Response by 2 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         self.showTransaction = showTransaction.data
+                        // When data fetch successful
+                        self.isLoading = false
                     }
                 }catch {
                     print("Error decoding JSON:", error)
+                    self.isLoading = false
                 }
     }
 }
+

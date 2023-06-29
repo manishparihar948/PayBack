@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PBTransactionDetailList: View {
-    
+        
     var itemData: ItemData
 
     var body: some View {
@@ -17,7 +17,7 @@ struct PBTransactionDetailList: View {
                 .background(
                     Color(uiColor:.gray)
                         .frame(width: 100, height: 100)
-                        .clipShape(Circle())
+                            .clipShape(Circle())
                 )
                 .frame(alignment: .center)
                     .font(.headline)
