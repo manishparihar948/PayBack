@@ -13,6 +13,7 @@ struct PBTransactionDetailList: View {
 
     var body: some View {
         VStack(alignment: .center) {
+            // Display Picture
             Text(getInitials(name: itemData.partnerDisplayName))
                 .background(
                     Color(uiColor:.gray)
@@ -27,16 +28,16 @@ struct PBTransactionDetailList: View {
                                     .padding(.bottom,100)
             
             
+            // Display Name
             Text(itemData.partnerDisplayName)
                 .font(.title)
                     .padding(.bottom,10)
          
-            
+            // Descriptions
             if let transactionDetail = itemData.transactionDetail {
                 Text("Description: \(transactionDetail.description?.rawValue ?? "Not Available")")
                 
             }
-            
             Spacer()
         }
     }

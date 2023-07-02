@@ -64,20 +64,30 @@ class PBViewModel: ObservableObject {
     @Published var showTransaction : [ItemData] = []
     
     @Published var isLoading = false
-    
+        
     var error: Error? 
     
     func fetchDataFromAPI() {
         // When fetching data
         isLoading = true
-        guard let url = Bundle.main.url(forResource: "PBTransactions", withExtension: "json") else {
-            // When an errors occurs
-            isLoading = false
-            print("json file not found")
-            return
-        }
         
-             // Convert to JSON
+        // Simulate network delay by 2 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            // Random control if the request should fail
+            let shouldRandomFail = Bool.random()
+            if shouldRandomFail {
+                // Error condition
+                self.isLoading = false
+                self.error = NSError(domain: "com.PayBack.error", code: 500, userInfo: [NSLocalizedDescriptionKey: "Failed to fetch data"])
+            } else {
+                guard let url = Bundle.main.url(forResource: "PBTransactions", withExtension: "json") else {
+                    // When a file not found error occurs
+                    self.isLoading = false
+                    self.error = NSError(domain: "com.PayBack.error", code: 404, userInfo: [NSLocalizedDescriptionKey: "JSON file not found"])
+                    return
+                }
+                
+                // Convert to JSON
                 do {
                     let data = try Data(contentsOf: url)
                     let decoder = JSONDecoder()
@@ -85,16 +95,16 @@ class PBViewModel: ObservableObject {
                     
                     let showTransaction = try decoder.decode(Item.self, from: data)
                     
-                    // Delayed Response by 2 seconds
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        self.showTransaction = showTransaction.data
-                        // When data fetch successful
-                        self.isLoading = false
-                    }
-                }catch {
-                    print("Error decoding JSON:", error)
+                    // When data fetch is successful
+                    self.showTransaction = showTransaction.data
                     self.isLoading = false
+                } catch {
+                    // When an error occurs during JSON decoding
+                    self.isLoading = false
+                    self.error = error
                 }
+            }
+        }
     }
 }
 
