@@ -64,7 +64,7 @@ struct PBTransactionsList: View {
                         Text("Error: \(error.localizedDescription)")
                             .foregroundColor(.red)
                                 .padding()
-                        Button("Retry") {
+                        Button("Try Again") {
                             viewModel.fetchDataFromAPI()
                         }
                         .padding()
@@ -132,7 +132,7 @@ struct PBTransactionsList: View {
                     Text("Network Error. Please Retry")
                         .foregroundColor(.red)
                         .padding()
-                    Button("Retry") {
+                    Button("Try Again!!") {
                         viewModel.fetchDataFromAPI()
                     }
                     .padding()
@@ -155,11 +155,15 @@ struct PBTransactionsList_Previews: PreviewProvider {
 
 // MARK: - List Row
 struct PBTransactionRow: View {
+    
     let darkGrayColor = Color(AppConstants.Color.darkGray)
     let itemData: ItemData
+    
+    let helper = Helper()
         
     var body: some View {
         VStack(alignment: .leading) {
+            
             // Display Name
             Text(itemData.partnerDisplayName)
                 .font(.system(size: 16, weight: .bold, design: .monospaced))
@@ -180,6 +184,7 @@ struct PBTransactionRow: View {
                 .font(.system(size: 14, weight: .medium, design: .monospaced))
                     .foregroundColor(darkGrayColor)
 
+
             // Descriptions
             Text(itemData.transactionDetail?.description?.rawValue ?? "")
                 .padding(.bottom, 2)
@@ -196,6 +201,7 @@ struct PBTransactionRow: View {
                 }
             }
             .padding(.trailing, 10)
+
                 .font(.system(size: 12, weight: .medium, design: .monospaced))
                     .foregroundColor(darkGrayColor)
         }

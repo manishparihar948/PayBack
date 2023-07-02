@@ -15,12 +15,13 @@ struct PayBackShowcaseApp: App {
 
     var body: some Scene {
         WindowGroup {
+            /*
             if !networkManager.isConnected {
                 VStack {
                     Text("Network Error. Please Retry")
                         .foregroundColor(.red)
                         .padding()
-                    Button("Retry") {
+                    Button("Try Again") {
                        // PBTransactionsList()
                         showTransactionsList = true
                     }
@@ -34,7 +35,8 @@ struct PayBackShowcaseApp: App {
             else  {
                 PBTransactionsList()
             }
-            // PBTransactionsList()
+             */
+             PBTransactionsList()
         }
     }
 }

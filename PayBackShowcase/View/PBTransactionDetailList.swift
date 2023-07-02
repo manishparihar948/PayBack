@@ -10,11 +10,13 @@ import SwiftUI
 struct PBTransactionDetailList: View {
         
     var itemData: ItemData
+    
+    let helper = Helper()
 
     var body: some View {
         VStack(alignment: .center) {
             // Display Picture
-            Text(getInitials(name: itemData.partnerDisplayName))
+            Text(helper.getInitials(name: itemData.partnerDisplayName))
                 .background(
                     Color(uiColor:.gray)
                         .frame(width: 100, height: 100)
@@ -40,18 +42,6 @@ struct PBTransactionDetailList: View {
             }
             Spacer()
         }
-    }
-    
-    // Helper method to extract the initials from the name
-    func getInitials(name: String) -> String {
-        let names = name.components(separatedBy: " ")
-        var initials = ""
-        for name in names {
-            if let firstLetter = name.first {
-                initials.append(firstLetter.uppercased())
-            }
-        }
-        return initials
     }
 }
 
