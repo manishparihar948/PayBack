@@ -26,14 +26,18 @@ struct PBTransactionDetailList: View {
                                 .padding(.trailing,5)
                                     .padding(.bottom,100)
             
+            
             Text(itemData.partnerDisplayName)
                 .font(.title)
                     .padding(.bottom,10)
+         
             
             if let transactionDetail = itemData.transactionDetail {
                 Text("Description: \(transactionDetail.description?.rawValue ?? "Not Available")")
                 
             }
+            
+            Spacer()
         }
     }
     

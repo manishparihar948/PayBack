@@ -12,9 +12,9 @@ struct PBTransactionsList: View {
     @ObservedObject var networkManager = NetworkManager()
     @StateObject var viewModel = PBViewModel()
     
-    
     @State private var selectedIndex = 0
     
+    // Setup Segment Control Button
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = .systemBlue
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
@@ -34,16 +34,22 @@ struct PBTransactionsList: View {
     }
      
     
-    // Transactions Sum
+    // Filtered Transactions Sum
     var filteredTransactionsSum: Double {
         var sum = 0.0
         if selectedIndex == 0 {
             let category1Transactions = sortedTransactions.filter { $0.category == 1 }
-            sum = category1Transactions.reduce(0.0) { $0 + Double($1.transactionDetail?.value?.amount ?? 0) }
+                sum = Double(category1Transactions.reduce(0) { $0 + ($1.transactionDetail?.value?.amount ?? 0) })
         } else if selectedIndex == 1 {
             let category2Transactions = sortedTransactions.filter { $0.category == 2 }
-            sum = category2Transactions.reduce(0.0) { $0 + Double($1.transactionDetail?.value?.amount ?? 0) }
+            sum = category2Transactions.reduce(0) { $0 + Double($1.transactionDetail?.value?.amount ?? 0) }
+        } else if selectedIndex == 2 {
+            let category3Transactions = sortedTransactions.filter { $0.category == 3 }
+            sum = category3Transactions.reduce(0) { $0 + Double($1.transactionDetail?.value?.amount ?? 0) }
+        } else if selectedIndex == 3 {
+            sum = sortedTransactions.reduce(0) { $0 + Double(($1.transactionDetail?.value!.amount)!) }
         }
+        print("Sum: \(sum)")
         return sum
     }
     
@@ -52,18 +58,20 @@ struct PBTransactionsList: View {
         NavigationView {
             VStack {
                 Picker("Select Category", selection: $selectedIndex) {
-                    Text("Category One").tag(0)
-                    Text("Category Two").tag(1)
+                    Text("Category 1").tag(0)
+                    Text("Category 2").tag(1)
+                    Text("Category 3").tag(2)
+                    Text("Category All").tag(3)
                 }
                 .pickerStyle(.segmented)
                 .padding(.bottom,5)
                 
                 // Rounding Sum up to 2 digits after decimal
-                let formattedSum = String(format: "%.2f", filteredTransactionsSum)
+                let formattedSum = String(format: "%.0f", filteredTransactionsSum)
                 Text("Sum: \(formattedSum)")
                     .font(.headline)
-                    .padding()
-                    .foregroundColor(.gray)
+                        .padding()
+                            .foregroundColor(.gray)
                 
                 if $viewModel.isLoading.wrappedValue {
                     // Show a loading indicator while loading transactions
@@ -72,20 +80,21 @@ struct PBTransactionsList: View {
                     VStack {
                         Text("Error: \(error.localizedDescription)")
                             .foregroundColor(.red)
-                            .padding()
+                                .padding()
                         Button("Retry") {
                             viewModel.fetchDataFromAPI()
                         }
                         .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
+                            .background(Color.blue)
+                                .foregroundColor(.white)
+                                    .cornerRadius(8)
                     }
                     .padding()
                 } else {
                     if selectedIndex == 0 {
                         let category1Transactions = sortedTransactions.filter { $0.category == 1 }
                         List(category1Transactions, id: \.self) { itemData in
+                            let _ = print(category1Transactions.count)
                             NavigationLink(destination: PBTransactionDetailList(itemData: itemData)) {
                                 PBTransactionRow(itemData: itemData)
                             }
@@ -93,6 +102,19 @@ struct PBTransactionsList: View {
                     } else if selectedIndex == 1 {
                         let category2Transactions = sortedTransactions.filter { $0.category == 2 }
                         List(category2Transactions, id: \.self) { itemData in
+                            NavigationLink(destination: PBTransactionDetailList(itemData: itemData)) {
+                                PBTransactionRow(itemData: itemData)
+                            }
+                        }
+                    } else if selectedIndex ==  2 {
+                        let category3Transactions = sortedTransactions.filter { $0.category == 3 }
+                        List(category3Transactions, id: \.self) { itemData in
+                            NavigationLink(destination: PBTransactionDetailList(itemData: itemData)) {
+                                PBTransactionRow(itemData: itemData)
+                            }
+                        }
+                    } else if selectedIndex == 3 {
+                        List(sortedTransactions, id: \.self) { itemData in
                             NavigationLink(destination: PBTransactionDetailList(itemData: itemData)) {
                                 PBTransactionRow(itemData: itemData)
                             }
@@ -115,9 +137,9 @@ struct PBTransactionsList: View {
                         viewModel.fetchDataFromAPI()
                     }
                     .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+                        .background(Color.blue)
+                            .foregroundColor(.white)
+                                .cornerRadius(8)
                 }
                 .padding()
             }
@@ -135,14 +157,15 @@ struct PBTransactionsList_Previews: PreviewProvider {
 
 // MARK: - List Row
 struct PBTransactionRow: View {
+    let darkGrayColor = Color(AppConstants.Color.darkGray) // Convert UIColor to Color
     let itemData: ItemData
         
     var body: some View {
         VStack(alignment: .leading) {
             Text(itemData.partnerDisplayName)
                 .font(.system(size: 16, weight: .bold, design: .monospaced))
-                .foregroundColor(.blue)
-                .padding(.bottom, 2)
+                    .foregroundColor(.blue)
+                        .padding(.bottom, 2)
             
             HStack {
                 if let amount = itemData.transactionDetail?.value?.amount {
@@ -153,13 +176,14 @@ struct PBTransactionRow: View {
                 Text(itemData.transactionDetail?.value?.currency ?? "")
             }
             .padding(.bottom, 2)
-            .font(.system(size: 14, weight: .medium, design: .monospaced))
-            .foregroundColor(.black)
-            
+                .font(.system(size: 14, weight: .medium, design: .monospaced))
+                    .foregroundColor(darkGrayColor)
+
             Text(itemData.transactionDetail?.description?.rawValue ?? "")
                 .padding(.bottom, 2)
-                .font(.system(size: 14, weight: .medium, design: .monospaced))
-                .foregroundColor(.black)
+                    .font(.system(size: 14, weight: .medium, design: .monospaced))
+                        .foregroundColor(darkGrayColor)
+
             
             HStack {
                 if let date = Helper.convertStringToDate(dateString: itemData.transactionDetail?.bookingDate ?? "") {
@@ -170,8 +194,8 @@ struct PBTransactionRow: View {
                 }
             }
             .padding(.trailing, 10)
-            .font(.system(size: 12, weight: .medium, design: .monospaced))
-            .foregroundColor(.black)
+                .font(.system(size: 12, weight: .medium, design: .monospaced))
+                    .foregroundColor(darkGrayColor)
         }
         .frame(height: 80)
     }
